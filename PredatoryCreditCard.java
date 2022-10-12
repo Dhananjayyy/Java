@@ -14,5 +14,15 @@ public class PredatoryCreditCard extends CreditCard {
             balance *= monthlyFactor;
         }
     }
+
+    // Override Charge method
+
+    public boolean recharge(double price){
+        boolean isSuccess = super.recharge(price);
+        if(!isSuccess){
+            balance += 5;
+        }
+        return isSuccess;
+    }
     
 }
